@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Brief Specification";   
+}
+    <body>
+        <br />
+        <table class="table table-striped table-bordered table-sm">
+            <tr>
+                <td>Operating System Version</td>
+                <td>@Environment.OSVersion</td>
+            </tr>
+            <tr>
+                <td>64 bits Operating System</td>
+                <td>@Environment.Is64BitOperatingSystem</td>
+            </tr>
+            <tr>
+                <td>Computer Name</td>
+                <td>@Environment.MachineName</td>
+            </tr>
+            <tr>
+                <td>Number Of Processors</td>
+                <td>@Environment.ProcessorCount</td>
+            </tr>
+            <tr>
+                <td>Windows folder</td>
+                <td>@Environment.SystemDirectory</td>
+            </tr>
+            <tr>
+                <td>Logical Drives Available</td>
+                <td>
+                    @String.Join(", ", Environment.GetLogicalDrives()
+                                )
+                </td>
+            </tr>           
+        </table>
+        <br />
+        <br />
+        <a class="btn btn-primary" asp-action="MainPage">Back to Main Page</a>
+    </body>
